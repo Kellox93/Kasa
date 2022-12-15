@@ -1,0 +1,49 @@
+header {
+    width: auto;
+    height: 68px;
+    display: flex;
+    margin: 3% 6% 0% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+._Nav {
+    height: 34px;
+    width: 220px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.A-Propos {
+    font-family: 'Montserrat';
+    font-size: 24px;
+    color: #FF6060;
+    text-decoration: none;
+}
+
+.Acceuil {
+
+    font-family: 'Montserrat';
+    font-size: 24px;
+    color: #FF6060;
+    
+}
+
+li{list-style-type:none; }
+
+.LOGO {
+    width: 210px;
+}
+
+@media screen and (max-width: 600px){
+    .LOGO {
+        width: 145px;
+    }
+    ._Nav {
+        width: 170px;
+
+    }
+    .A-Propos{font-size: 20px;}
+    .Acceuil{font-size: 20px;}
+}
