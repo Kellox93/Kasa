@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { Navigate, useParams } from 'react-router-dom'
 import datas from '../../datas/logements.json'
 import Carrousel from '../../components/Carrousel'
 import Tags from '../../components/Tags'
@@ -9,17 +9,17 @@ import './style.css'
  
 function Fiche_Logement() {
     const idUrl = useParams().id
-
     function id (Logements) {
         return Logements.id === idUrl;
       }
     const Logement = datas.find(id);
-    const Pictures = Logement.pictures;
+    
 
-    return (
+    if (Logement === undefined){return <Navigate to="/*" replace={true}/>}
+    else { return (
         <div className='_Body'>
 
-            <Carrousel cover={Pictures}/>
+            <Carrousel cover={Logement.pictures}/>
 
             <section className='section2'>
                 <div className='Logement' >
@@ -56,7 +56,7 @@ function Fiche_Logement() {
             </section>
 
         </div>
-    )
+    )}
 }
 
 export default Fiche_Logement
