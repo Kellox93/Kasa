@@ -1,3 +1,17 @@
 .star {
     margin-left: 10px;
 }
+
+.Rating {
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media screen and (max-width: 600px){
+    .Rating{
+        justify-content: flex-start;
+    }
+    .star {
+        
+}
+}

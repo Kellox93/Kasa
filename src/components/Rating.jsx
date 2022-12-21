@@ -5,11 +5,11 @@ import './styles/Rating.css'
 function Rating (rating) {
     const rangStar = [1, 2, 3 ,4 , 5]
     return (
-        <div>
-			{rangStar.map((rang) =>
+        <div className='Rating'>
+			{rangStar.map((rang, index) =>
 				rang <= rating.Rating ? 
-					<img className='star' src={starRose} alt='etoile rose'/>
-				 : <img className='star' src={starGrise} alt='etoile rose'/>
+					<img key={index} className='star' src={starRose} alt='etoile rose'/>
+				 : <img key={index} className='star' src={starGrise} alt='etoile grise'/>
 			)}
 		</div>
     )

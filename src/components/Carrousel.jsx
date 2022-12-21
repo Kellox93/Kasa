@@ -13,7 +13,6 @@ function Carrousel (cover){
             i++;
             Apercu = Photo[i];
             numeroPhoto = Photo.indexOf(Apercu) + 1;
-            console.log(i);
             return (
                 document.getElementsByClassName('CarrouselImage ')[0].setAttribute('src', Apercu),
                 document.getElementsByClassName('NumeroPhoto')[0].innerHTML = numeroPhoto + "/" + Photo.length
@@ -24,7 +23,6 @@ function Carrousel (cover){
             i = 0;
             Apercu = Photo[i];
             numeroPhoto = Photo.indexOf(Apercu) + 1;
-            console.log(i)
             return (
                 document.getElementsByClassName('CarrouselImage ')[0].setAttribute('src', Apercu),
                 document.getElementsByClassName('NumeroPhoto')[0].innerHTML = numeroPhoto + "/" + Photo.length
@@ -55,7 +53,17 @@ function Carrousel (cover){
         }
     };
 
-    return (
+    if (Photo.length === 1){
+        return (
+            <section className='section1'>
+            <div className="Carrousel">
+                <img src={Apercu} alt="appartement" className='CarrouselImage'/>
+            </div>
+        </section>
+        )
+    }
+    else {
+        return (
         <section className='section1'>
             <div className="Carrousel">
                 <img src={Apercu} alt="appartement" className='CarrouselImage'/>
@@ -64,7 +72,8 @@ function Carrousel (cover){
                 <p className='NumeroPhoto'>{numeroPhoto}/{Photo.length}</p>
             </div>
         </section>
-    )
+        )
+    }    
 };
 
 export default Carrousel

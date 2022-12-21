@@ -5,7 +5,9 @@ import './styles/Header.css'
 function Header() {
     return (
         <header>
-            <img src={logo} alt='kasa' className='LOGO' />
+            <li><Link key='Acceuil' className='Acceuil' to="/">
+                <img src={logo} alt='kasa' className='LOGO' />
+            </Link></li>
             <nav className='_Nav'>
                     <li><Link key='Acceuil' className='Acceuil' to="/">Accueil</Link></li>
                     <li><Link key='A-Propos' className='A-Propos' to="/a-propos">A Propos</Link></li>

@@ -9,10 +9,12 @@ header {
 
 ._Nav {
     height: 34px;
-    width: 220px;
+    width: 250px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-underline-offset: 3px;
+    /* text-decoration: underline solid 3px; */
 }
 
 .A-Propos {
@@ -27,8 +29,18 @@ header {
     font-family: 'Montserrat';
     font-size: 24px;
     color: #FF6060;
-    
+    text-decoration: none;
 }
+
+.A-Propos:hover {
+    text-decoration: underline;
+}
+
+.Acceuil:hover {
+    text-decoration: underline;
+}
+
+
 
 li{list-style-type:none; }
 
@@ -38,12 +50,12 @@ li{list-style-type:none; }
 
 @media screen and (max-width: 600px){
     .LOGO {
-        width: 145px;
+        width: 130px;
     }
     ._Nav {
-        width: 170px;
+        width: 155px;
 
     }
-    .A-Propos{font-size: 20px;}
-    .Acceuil{font-size: 20px;}
+    .A-Propos{font-size: 17px;}
+    .Acceuil{font-size: 17px;}
 }

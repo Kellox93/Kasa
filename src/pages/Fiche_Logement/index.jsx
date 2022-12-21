@@ -3,6 +3,7 @@ import datas from '../../datas/logements.json'
 import Carrousel from '../../components/Carrousel'
 import Tags from '../../components/Tags'
 import Rating from '../../components/Rating'
+import Dropdown from '../../components/Dropdown'
 import './style.css'
 
  
@@ -17,11 +18,15 @@ function Fiche_Logement() {
 
     return (
         <div className='_Body'>
+
             <Carrousel cover={Pictures}/>
+
             <section className='section2'>
-                <div className='Titre'>
-                    <h1>{Logement.title}</h1>
-                    <p className='location'>{Logement.location}</p>
+                <div className='Logement' >
+                    <div className='Titre'>
+                        <h1>{Logement.title}</h1>
+                        <p className='location'>{Logement.location}</p>
+                    </div>
                     <Tags Tags={Logement.tags}/>
                 </div>
                 <div className='Host'>
@@ -32,6 +37,24 @@ function Fiche_Logement() {
                     <Rating Rating={Logement.rating}/>
                 </div>
             </section>
+
+            <section className='section3'>
+                <div className='fiche' >
+                    <Dropdown 
+                        titre= 'Description'
+                        contenant= {Logement.description}
+                    />
+                </div>    
+                <div className='fiche'>   
+                    <Dropdown 
+                        titre='Équipements'
+                        contenant={
+                        Logement.equipments.map((equipment) => <li key={equipment}>{equipment}</li>)
+                        }
+                    />
+                </div> 
+            </section>
+
         </div>
     )
 }
